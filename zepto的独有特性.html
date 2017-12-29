@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width"
+          , user-scalable=no, inital-scale=1.0, maximum-scale=1.0,minimum-scale=1.0/>
+    <title>zepto的独有特性</title>
+    <style>
+        #some_element{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+<div id="some_element"></div>
+<script src="js/zepto.js"></script>
+<script>
+    $("#some_element").tap(function () {
+        $("#some_element").animate({
+            opacity:0.25,
+            left:'50px',
+            rotateZ:'45deg',
+            translate3d:'0, 20px, 0'
+        },500, 'ease-out')
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width"
+          , user-scalable=no, inital-scale=1.0, maximum-scale=1.0,minimum-scale=1.0/>
+    <title>touch</title>
+    <style>
+        .delete{
+            display: none;
+            border: 1px solid #a1a5a6;
+            padding: 4px 8px;
+            background:#2b669a;
+            font-size:14px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <ul id="items">
+        <li>
+            新闻全文
+            <span class="delete">DELETE</span>
+        </li>
+        <li>
+            奥运会
+            <span class="delete">DELETE</span>
+        </li>
+    </ul>
+    <script src="js/zepto.js"></script>
+    <script>
+        //在li上滑动，delete按钮出现
+        $("#items li").swipe(function() {
+            $(".delete" ).hide();
+            $(".delete",this).show();
+        });
+        //触摸delete按钮li消失
+        $(".delete").tap(function (){
+            $(this).parent("li").remove();
+        })
+    </script>
+</body>
+</html>
